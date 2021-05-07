@@ -1,4 +1,4 @@
-cellSize = 2;
+cellSize = 4;
 
 init();
 
