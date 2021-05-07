@@ -1,4 +1,4 @@
-cellSize = 4;
+cellSize = 2;
 
 init();
 
@@ -9,6 +9,7 @@ function init() {
 	let d = document.getElementById("body");
 	ctx.canvas.width  = d.offsetWidth;
 	ctx.canvas.height = document.documentElement.scrollHeight;
+	ctx.fillStyle = "#c0c0c0";
 
 	width = Math.floor((ctx.canvas.width / cellSize) / 2) * 2;
 	height = Math.floor((ctx.canvas.height / cellSize) / 2) * 2;
@@ -42,6 +43,8 @@ function stampObject(object) {
 }
 
 function loop() {
+	step();
+	step();
 	step();
 	if(!finish)
 		setTimeout(loop, 1);

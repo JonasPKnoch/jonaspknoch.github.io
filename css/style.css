@@ -1,6 +1,7 @@
 body {
 	margin: 0px;
 	height: 0xp;
+	background-color: #f3f3f3;
 }
 
 /* Background */
@@ -11,32 +12,28 @@ body {
 	height: 100%;
 	left: 0;
 	top: 0;
-	//background-color: gray;
 	z-index: -10;
-	
 }
 
 /* Header */
 
 .header {
-	background-color: red;
+	background-color: #92929288;
 	position: sticky;
 	width: 100%;
 	left:0px;
 	top: 10px;
 	margin-top: 120px;
-	height: 30px;
+	height: 40px;
 }
 
 .header ul {
-	background-color: yellow;
 	list-style-type: none;
 	overflow: hidden;
 	height: 100%;
 }
 
 .header li {
-	background-color: green;
 	display: flex;
 	float: right;
 	padding-left: 20px;
@@ -45,15 +42,18 @@ body {
 }
 
 .header a {
-	background-color: blue;
+	color: #ffb200;
 	display: block;
 	margin: auto;
+	text-decoration: none;
+	font-size: 20pt;
+	font-family: arial, sans-serif;
 }
 
 /* Content */
 
 .content {
-	background-color: purple;
+	background-color: white;
 	margin-left: 40px;
 	margin-right: 40px;
 	margin-top: 10px;
