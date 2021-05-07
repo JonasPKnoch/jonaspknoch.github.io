@@ -69,9 +69,11 @@ body {
 }
 
 .header ul {
+	float: right;
 	list-style-type: none;
 	overflow: hidden;
 	height: 100%;
+	margin: 0px;
 }
 
 .header li {
@@ -80,7 +82,7 @@ body {
 	height: 100%;
 }
 
-.header a {
+.header a.nav-item {
 	position: relative;
 	color: var(--primary);
 	display: block;
@@ -99,7 +101,7 @@ body {
 	transition-duration: 0.1s;
 }
 
-.header a:hover {
+.header a.nav-item:hover {
 	color: var(--primary-focus);
 }
 
@@ -114,9 +116,18 @@ body {
 	z-index: -1;
 }
 
-.header a:hover > .hover-animate {
+.header a.nav-item:hover > .hover-animate {
 	width: 100%;
 	left:0;
+}
+
+.header a.brand {
+	margin-left: 10px;
+}
+
+.header a.brand img {
+	height: 100%;
+	margin: 0px;
 }
 
 /* Content */
