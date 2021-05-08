@@ -1,6 +1,6 @@
 cellSize = 4;
 
-document.addEventListener('DOMContentLoaded', init, false);
+setTimeout(init, 1000);
 
 function init() {
 	c = document.getElementById("t");
