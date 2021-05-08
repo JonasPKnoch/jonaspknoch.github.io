@@ -41,7 +41,6 @@
 
 body {
 	margin: 0px;
-	height: 0xp;
 	background-color: var(--background);
 }
 
@@ -54,6 +53,7 @@ body {
 	left: 0;
 	top: 0;
 	z-index: -10;
+	background-color: var(--background);
 }
 
 /* Header */
@@ -201,8 +201,11 @@ body {
 	margin-right: 80px;
 	margin-top: 10px;
 	margin-bottom: 80px;
-	
+
+	padding-left: 50px;
+	padding-right: 50px;
+	/*
 	padding: 50px;
-	
-	text-align: justify;
+	*
+	text-align: justify;*/
 }

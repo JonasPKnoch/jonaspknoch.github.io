@@ -1,13 +1,13 @@
 cellSize = 4;
 
-init();
+document.addEventListener('DOMContentLoaded', init, false);
 
 function init() {
 	c = document.getElementById("t");
 	ctx = c.getContext("2d");
 	
 	let d = document.getElementById("body");
-	ctx.canvas.width  = d.offsetWidth;
+	ctx.canvas.width  = document.documentElement.scrollWidth;
 	ctx.canvas.height = document.documentElement.scrollHeight;
 	ctx.fillStyle = "#c0c0c0";
 
@@ -33,8 +33,9 @@ function stampObject(object) {
 	let gridILow = Math.floor(rect.left/cellSize - 1.5);
 	let gridJLow = Math.floor(rect.top/cellSize - 1.5);
 	let gridIHigh = Math.ceil(rect.right/cellSize + 1.5);
-	let gridJHigh = Math.ceil((rect.top + object.height)/cellSize + 1.5);
-	
+	let gridJHigh = Math.ceil((rect.bottom)/cellSize + 1.5);
+	console.log(rect.height);
+
 	for(let i = 0; i < gridIHigh - gridILow; i++) {
 		for(let j = 0; j < gridJHigh - gridJLow; j++) {
 			grid[gridILow + i][gridJLow + j] = 1
