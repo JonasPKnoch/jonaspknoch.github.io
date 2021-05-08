@@ -30,10 +30,10 @@ function init() {
 
 function stampObject(object) {
 	let rect = object.getBoundingClientRect();
-	let gridILow = Math.floor(rect.left/cellSize - 0.5);
-	let gridJLow = Math.floor(rect.top/cellSize - 0.5);
-	let gridIHigh = Math.ceil(rect.right/cellSize + 0.5);
-	let gridJHigh = Math.ceil(rect.bottom/cellSize + 0.5);
+	let gridILow = Math.floor(rect.left/cellSize - 1.5);
+	let gridJLow = Math.floor(rect.top/cellSize - 1.5);
+	let gridIHigh = Math.ceil(rect.right/cellSize + 1.5);
+	let gridJHigh = Math.ceil((rect.top + object.height)/cellSize + 1.5);
 	
 	for(let i = 0; i < gridIHigh - gridILow; i++) {
 		for(let j = 0; j < gridJHigh - gridJLow; j++) {
