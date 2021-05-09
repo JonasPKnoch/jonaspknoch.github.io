@@ -8,12 +8,12 @@ function init() {
 	
 	ctx.canvas.width  = document.documentElement.scrollWidth;
 	
-	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2;
+	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2 + 1;
 	cellSize = ctx.canvas.width/width;
 	document.documentElement.style.setProperty('--cell-size', cellSize + "px");
 
 	ctx.canvas.height = document.documentElement.scrollHeight;
-	height = Math.floor((ctx.canvas.height / cellSizePrefered) / 2) * 2;
+	height = Math.floor((ctx.canvas.height / cellSizePrefered) / 2) * 2 + 1;
 	grid = [];
 	for(let i = 0; i < width; i++) {
 		grid.push([]);
@@ -35,7 +35,7 @@ function stampObject(object) {
 	let gridILow = Math.round(rect.left/cellSize) - 1;
 	let gridJLow = Math.round(rect.top/cellSize) - 1;
 	let gridIHigh = Math.round(rect.right/cellSize) + 1;
-	let gridJHigh = Math.ceil(rect.bottom/cellSize) + 1;
+	let gridJHigh = Math.round(rect.bottom/cellSize) + 1;
 	console.log(rect.height);
 
 	for(let i = 0; i < gridIHigh - gridILow; i++) {

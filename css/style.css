@@ -203,8 +203,8 @@ body {
 
 .content {
 	background-color: white;
-	margin-left: calc(var(--cell-size) * 25);
-	margin-right: calc(var(--cell-size) * 25);
+	margin-left: calc(var(--cell-size) * 26);
+	margin-right: calc(var(--cell-size) * 26);
 	margin-top: calc(var(--cell-size) * 4);
 	margin-bottom: calc(var(--cell-size) * 100);
 	padding: 50px;
