@@ -30,6 +30,7 @@
 	--secondary-focus: #565656;
 	--background: #f3f3f3;
 	--background-focus: #c0c0c0;
+	--cell-size: 0px;
 }
 
 /* General */
@@ -161,34 +162,39 @@ body {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 0px;
+	max-width: 0px;
+	width: auto;
 	height: 35px;
 	background-color: var(--secondary-focus);
 	z-index: -1;
 	overflow: hidden;
-	transition-duration: 0.25s;
 	color: var(--primary-focus);
 	font-family: primary;
 	display: flex;
 	align-items: center;
+	transition-duration: 0.2s;
+	padding-left: 0px;
+	padding-right: 0px;
+	white-space: nowrap;
 }
 
 .sidebar a:hover > .hover-animate {
-	width: auto;
-	white-space: nowrap;
+	max-width: 1000px;
 	right: -10px;
 	padding-left: 10px;
 	padding-right: 50px;
 }
 
-.sidebar img {
+.sidebar svg {
 	width: 100%;
 	position: relative;
 	transition-duration: 0.2s;
+	fill: black; 
 	left: 0px;
 }
 
-.sidebar a:hover > img {
+.sidebar a:hover > svg {
+	fill: var(--primary-focus);
 	left: 10px;
 }
 
@@ -197,11 +203,10 @@ body {
 
 .content {
 	background-color: white;
-	margin-left: 80px;
-	margin-right: 80px;
-	margin-top: 10px;
-	margin-bottom: 80px;
-
+	margin-left: calc(var(--cell-size) * 25);
+	margin-right: calc(var(--cell-size) * 25);
+	margin-top: calc(var(--cell-size) * 4);
+	margin-bottom: calc(var(--cell-size) * 100);
 	padding: 50px;
 
 	text-align: justify;*/

@@ -1,18 +1,19 @@
-cellSize = 4;
+cellSizePrefered = 3;
 
-setTimeout(init, 1000);
+setTimeout(init, 100);
 
 function init() {
-	c = document.getElementById("t");
+	c = document.getElementById("canvas");
 	ctx = c.getContext("2d");
 	
-	let d = document.getElementById("body");
 	ctx.canvas.width  = document.documentElement.scrollWidth;
-	ctx.canvas.height = document.documentElement.scrollHeight;
-	ctx.fillStyle = "#c0c0c0";
+	
+	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2;
+	cellSize = ctx.canvas.width/width;
+	document.documentElement.style.setProperty('--cell-size', cellSize + "px");
 
-	width = Math.floor((ctx.canvas.width / cellSize) / 2) * 2;
-	height = Math.floor((ctx.canvas.height / cellSize) / 2) * 2;
+	ctx.canvas.height = document.documentElement.scrollHeight;
+	height = Math.floor((ctx.canvas.height / cellSizePrefered) / 2) * 2;
 	grid = [];
 	for(let i = 0; i < width; i++) {
 		grid.push([]);
@@ -25,15 +26,16 @@ function init() {
 
 	openCells = [[[Math.round(width/2), 10],[Math.round(width/2), 10]]];
 	finish = false;
+	ctx.fillStyle = "#c0c0c0";
 	loop();
 }
 
 function stampObject(object) {
 	let rect = object.getBoundingClientRect();
-	let gridILow = Math.floor(rect.left/cellSize - 1.5);
-	let gridJLow = Math.floor(rect.top/cellSize - 1.5);
-	let gridIHigh = Math.ceil(rect.right/cellSize + 1.5);
-	let gridJHigh = Math.ceil((rect.bottom)/cellSize + 1.5);
+	let gridILow = Math.round(rect.left/cellSize) - 1;
+	let gridJLow = Math.round(rect.top/cellSize) - 1;
+	let gridIHigh = Math.round(rect.right/cellSize) + 1;
+	let gridJHigh = Math.ceil(rect.bottom/cellSize) + 1;
 	console.log(rect.height);
 
 	for(let i = 0; i < gridIHigh - gridILow; i++) {
@@ -58,7 +60,7 @@ function step() {
 			return;
 		}
 		
-		nextIndex = openCells.length - Math.floor(Math.random() * Math.min(openCells.length, 64)) - 1;
+		nextIndex = openCells.length - Math.floor(Math.random() * Math.min(openCells.length, 32)) - 1;
 		next = openCells[nextIndex];
 		nextI = next[1][0];
 		nextJ = next[1][1];
