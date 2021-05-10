@@ -65,8 +65,8 @@ body {
 	width: 100%;
 	left:0px;
 	top: 10px;
-	margin-top: 120px;
-	height: 40px;
+	margin-top: calc(var(--cell-size) * 10);
+	height: calc(var(--cell-size) * 7);
 }
 
 .header ul {
@@ -79,6 +79,7 @@ body {
 
 .header li {
 	display: flex;
+	align-items: center;
 	float: right;
 	height: 100%;
 }
@@ -203,8 +204,8 @@ body {
 
 .content {
 	background-color: white;
-	margin-left: calc(var(--cell-size) * 26);
-	margin-right: calc(var(--cell-size) * 26);
+	margin-left: calc(var(--cell-size) * 20);
+	margin-right: calc(var(--cell-size) * 20);
 	margin-top: calc(var(--cell-size) * 4);
 	margin-bottom: calc(var(--cell-size) * 100);
 	padding: 50px;
