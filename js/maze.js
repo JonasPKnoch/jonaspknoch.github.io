@@ -1,11 +1,35 @@
-cellSizePrefered = 3;
+cellSizePrefered = 6;
 
 setTimeout(init, 100);
+
+class Cell {
+	constructor(i, j) {
+		this.i = i;
+		this.j = j;
+		this.up = null;
+		this.down = null;
+		this.left = null;
+		this.right = null;
+	}
+
+	draw() {
+		ctx.rect(this.i*cellSize + cellSize*0.5, this.j*cellSize + cellSize*0.5, cellSize, cellSize);
+
+		if(this.left != null)
+			ctx.rect(this.i*cellSize + cellSize*0.5, this.j*cellSize + cellSize*0.5, cellSize, cellSize);
+		if(this.right != null)
+			ctx.rect(this.i*cellSize + cellSize*0.5, this.j*cellSize + cellSize*0.5, cellSize, cellSize);
+		if(this.up != null)		
+			ctx.rect(this.i*cellSize + cellSize*0.5, this.j*cellSize + cellSize*0.5, cellSize, cellSize);
+		if(this.down != null)
+			ctx.rect(this.i*cellSize + cellSize*0.5, this.j*cellSize + cellSize*0.5, cellSize, cellSize);
+	}
+}
 
 function init() {
 	c = document.getElementById("canvas");
 	ctx = c.getContext("2d");
-	
+	ctx.imageSmoothingEnabled = true;
 	ctx.canvas.width  = document.documentElement.scrollWidth;
 	
 	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2 + 1;
