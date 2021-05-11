@@ -1,19 +1,17 @@
-cellSizePrefered = 6;
+cellSizePrefered = 8;
 
 setTimeout(init, 100);
 
 function init() {
 	c = document.getElementById("canvas");
 	ctx = c.getContext("2d");
-	ctx.imageSmoothingEnabled = true;
+	ctx.imageSmoothingEnabled = false;
 	ctx.canvas.width  = document.documentElement.scrollWidth;
-	
-	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2 + 1;
-	cellSize = ctx.canvas.width/width;
-	document.documentElement.style.setProperty('--cell-size', cellSize + "px");
-
 	ctx.canvas.height = document.documentElement.scrollHeight;
-	height = Math.floor((ctx.canvas.height / cellSizePrefered) / 2) * 2 + 1;
+	width = Math.floor((ctx.canvas.width / cellSizePrefered) / 2) * 2 + 1;
+	height = Math.round((ctx.canvas.height / cellSizePrefered) / 2) * 2;
+	cellSize = ctx.canvas.width/width;
+
 	grid = [];
 	for(let i = 0; i < width; i++) {
 		grid.push([]);
@@ -33,10 +31,10 @@ function init() {
 
 function stampObject(object) {
 	let rect = object.getBoundingClientRect();
-	let gridILow = Math.round(object.offsetLeft/cellSize);
-	let gridJLow = Math.round(object.offsetTop/cellSize);
-	let gridIHigh = Math.round((object.offsetLeft + object.offsetWidth)/cellSize);
-	let gridJHigh = Math.round((object.offsetTop + object.offsetHeight)/cellSize);
+	let gridILow = Math.round(object.offsetLeft/cellSize) + 1;
+	let gridJLow = Math.round(object.offsetTop/cellSize) + 1;
+	let gridIHigh = Math.round((object.offsetLeft + object.offsetWidth)/cellSize) - 1;
+	let gridJHigh = Math.round((object.offsetTop + object.offsetHeight)/cellSize) - 1;
 	console.log(object.offsetTop);
 
 	for(let i = 0; i < gridIHigh - gridILow; i++) {
