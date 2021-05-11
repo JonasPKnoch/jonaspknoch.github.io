@@ -35,11 +35,6 @@
 
 /* General */
 
-* {
-	font-family: secondary;
-	line-height: 1.5rem;
-}
-
 body {
 	margin: 0px;
 	background-color: var(--background);
@@ -86,9 +81,9 @@ body {
 
 .header a.nav-item {
 	position: relative;
+	box-sizing: border-box;
 	color: var(--primary);
 	display: block;
-	margin: auto;
 	text-decoration: none;
 	font-size: 20pt;
 	font-family: primary;
@@ -101,10 +96,16 @@ body {
 	padding-bottom: 10px;
 	line-height: 1rem;
 	transition-duration: 0.1s;
+	outline-style: solid;
+	outline-color: var(--primary-focus);
+	outline-width: 0px;
+	outline-offset: 0px;
 }
 
 .header a.nav-item:hover {
 	color: var(--primary-focus);
+	outline-width: 3px;
+	outline-offset: -3px;
 }
 
 .header .hover-animate {
@@ -210,5 +211,93 @@ body {
 	margin-bottom: calc(var(--cell-size) * 100);
 	padding: 50px;
 
-	text-align: justify;*/
+	text-align: justify;
 }
+
+.content h1 {
+	font-size: 32pt;
+	font-family: primary;
+	font-weight: bold;
+	color: var(--primary);
+}
+
+.content h2 {
+	font-size: 24pt;
+	font-family: primary;
+	color: black;
+}
+
+.content p {
+	font-family: secondary;
+	line-height: 1.5rem;
+	font-size: 12pt
+}
+
+.content a {
+	box-sizing: border-box;
+	text-align: center;
+	font-weight: bold;
+	font-size: 24pt;
+	color: var(--primary);
+	font-family: primary;
+	padding: 16px;
+	outline-color: black;
+	border-style: none;
+	border-radius: 0px;
+	outline-width: 2px;
+	background-color: var(--secondary);
+	transition-duration: 0.2s;
+	position: relative;
+	z-index: 1;
+	outline-style: solid;
+	text-decoration: none;
+}
+
+.content a:hover {
+	color: var(--primary-focus);
+	outline-color: var(--primary-focus);
+	outline-width: 4px;
+}
+
+
+.content .hover-animate {
+	position: absolute;
+	top:0;
+    left:50%;
+    width:0%;
+    height:100%;
+	background-color: var(--secondary-focus);
+	transition-duration: 0.2s;
+	z-index: -1;
+}
+
+.content a:hover > .hover-animate {
+	width: 100%;
+	left: 0;
+}
+
+
+.content a.big {
+	display: inline-block;
+	margin-top: 42px;
+}
+
+.content .title {
+	display: block;
+	background-color: var(--background);
+	padding: 40px;
+	padding-top: 10px;
+	margin: 50px
+}
+
+.content .title h1 {
+	font-size: 500%;
+}
+
+.content .title p {
+	font-size: 125%;
+	line-height: 150%;
+}
+
+
+
