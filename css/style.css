@@ -238,6 +238,17 @@ body {
 }
 
 .content a {
+	text-decoration: none;
+	color: var(--primary);
+	transition-duration: 0.1s;
+}
+
+.content a:hover {
+	color: var(--primary-focus);
+	background-color: var(--secondary-focus);
+}
+
+.content .button {
 	box-sizing: border-box;
 	text-align: center;
 	font-weight: bold;
@@ -257,7 +268,7 @@ body {
 	text-decoration: none;
 }
 
-.content a:hover {
+.content .button:hover {
 	color: var(--primary-focus);
 	outline-color: var(--primary-focus);
 	outline-width: 4px;
@@ -303,6 +314,10 @@ body {
 	line-height: 150%;
 }
 
+.content img.display {
+	float: right;
+}
+
 .project-showcase {
 	display: block;
 	width: 100%;
@@ -323,8 +338,7 @@ body {
 }
 
 .project-showcase h2 a {
-	text-decoration: none;
-
+	color: black;
 }
 
 .project-showcase img {
