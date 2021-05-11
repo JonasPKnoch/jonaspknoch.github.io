@@ -24,8 +24,8 @@ function init() {
 
 	openCells = [[[Math.round(width/2), 9],[Math.round(width/2), 9]]];
 	finish = false;
-	ctx.fillStyle = "#c0c0c0";
-	ctx.strokeStyle = "#c0c0c0";
+	ctx.fillStyle = "#e4e4e4";
+	ctx.strokeStyle = "#e4e4e4";
 	loop();
 }
 

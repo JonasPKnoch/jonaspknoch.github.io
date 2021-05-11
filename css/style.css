@@ -29,7 +29,7 @@
 	--secondary: #929292;
 	--secondary-focus: #565656;
 	--background: #f3f3f3;
-	--background-focus: #c0c0c0;
+	--background-focus: #e4e4e4;
 }
 
 /* General */
@@ -59,7 +59,7 @@ body {
 	width: 100%;
 	left:0px;
 	top: 10px;
-	margin-top: 64px;
+	margin-top: 164px;
 	height: 54px;
 }
 
@@ -99,6 +99,11 @@ body {
 	outline-color: var(--primary-focus);
 	outline-width: 0px;
 	outline-offset: 0px;
+}
+
+.header a.active {
+	text-decoration: underline;
+	background-color: var(--secondary-focus);
 }
 
 .header a.nav-item:hover {
@@ -204,12 +209,13 @@ body {
 
 .content {
 	background-color: white;
-	margin-left: calc(60px);
-	margin-right: calc(60px);
-	margin-top: calc(40px);
-	margin-bottom: calc(200px);
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	padding: 50px;
 	text-align: justify;
+	scroll-snap-type: y mandatory;
 }
 
 .content h1 {
@@ -295,6 +301,64 @@ body {
 .content .title p {
 	font-size: 125%;
 	line-height: 150%;
+}
+
+.project-showcase {
+	display: block;
+	width: 100%;
+	background-color: var(--background);
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.project-showcase td {
+	height: 300px;
+}
+
+.project-showcase .desc {
+	vertical-align: top;
+	padding: 20px;
+	height: 100%;
+}
+
+.project-showcase h2 a {
+	text-decoration: none;
+
+}
+
+.project-showcase img {
+	height: 100%;
+	float: right;
+	display: inline-block;
+	margin: 0px;
+}
+
+/* Footer */
+.footer {
+	margin-right: 550px;
+	margin-left: 550px;
+	margin-top: 140px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.footer a {
+	font-size: 12pt;
+	font-family: secondary;
+	padding: 6px;
+	transition-duration: 0.1s;
+	text-decoration: none;
+	color: black;
+}
+
+.footer a:hover {
+	color: var(--primary-focus);
+	fill: var(--primary-focus);
+}
+
+.footer svg {
+	height: 1.25em;
 }
 
 /* Misc */

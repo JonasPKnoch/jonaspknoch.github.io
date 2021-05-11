@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>4D Tic Tac Toe</title>
+		<script src="js/script.js"></script>
+    </head>
+    <body> 
+		<h1>Hyper-Tic-Tac-Toe</h1>
+		<div>
+			<h2>Enter player names:</h2>
+			<form>
+				<label for="player1Name">Player 1 name:</label><br>
+				<input type="text" id="player1Name" value="Player 1">
+				<br>
+				<label for="player2Name">Player 2 name:</label>
+				<br>
+				<input type="text" id="player2Name" value="Player 2">
+			</form>
+			<br>
+			<p>
+				Hyper-Tic-Tac-Toe, as the name suggests, is the game of Tic-Tac-Toe played in 4 
+				dimensions. The title comes from the common prefix "hyper" used for 4D versions of
+				objects, like a hyper-cube. 3 in a row are still required to win in 
+				Hyper-Tic-Tac-Toe, and they still follow a generalized version of the same rules. 
+				3 in a row is defined as X's or O's that form a continuous straight line. A 
+				continuous straight line is defined as a series of squares that are at most one 
+				square away in each dimension in a single direction. Below, two dimensions are 
+				visualized as the larger octothorpe (Tic-Tac-Toe board), and two more as the smaller 
+				octothorpes within each square of the larger one. Each of the smaller boards acts like 
+				a normal 2D game of Tic-Tac-Toe, but you can make 3 in a row using the larger boards as well. 
+			</p>
+				<img class="sample" src="img/simple3.png" alt="sample" style="width: 200px">
+				<br>
+				<img class="sample" src="img/bigger3.png" alt="sample" style="width: 200px">
+				<br>
+				<img class="sample" src="img/bigger3-2.png" alt="sample" style="width: 200px">
+				<br>
+			<p style="text-align: center">
+				This one is not a straight line.
+			</p>
+			<img class="sample" src="img/wrong.png" alt="sample" style="width: 200px">
+			<p>
+				Give the game a few tries and see if it makes any sense. A bit harder to wrap your head around than normal Tic-Tac-Toe, but quite a bit more interesting as well.
+			</p>
+			<br>
+			<h2 id="turnDisplay">Take a turn:</h2>
+			<h3 id="scoreDisplay">Player1: 0 | Player2: 0</h3>
+			<table class="outerBoard">
+				<tr>
+					<td class="outerSquare t l">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 0, 0)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 0, 0)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 0, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 0, 0)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 0, 0)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 0, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 0, 0)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 0, 0)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 0, 0)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare t">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 1, 0)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 1, 0)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 1, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 1, 0)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 1, 0)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 1, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 1, 0)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 1, 0)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 1, 0)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare t r">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 2, 0)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 2, 0)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 2, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 2, 0)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 2, 0)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 2, 0)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 2, 0)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 2, 0)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 2, 0)"></button></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="outerSquare l">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 0, 1)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 0, 1)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 0, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 0, 1)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 0, 1)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 0, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 0, 1)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 0, 1)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 0, 1)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 1, 1)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 1, 1)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 1, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 1, 1)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 1, 1)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 1, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 1, 1)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 1, 1)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 1, 1)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare r">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 2, 1)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 2, 1)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 2, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 2, 1)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 2, 1)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 2, 1)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 2, 1)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 2, 1)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 2, 1)"></button></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="outerSquare b l">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 0, 2)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 0, 2)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 0, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 0, 2)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 0, 2)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 0, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 0, 2)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 0, 2)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 0, 2)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare b">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 1, 2)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 1, 2)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 1, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 1, 2)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 1, 2)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 1, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 1, 2)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 1, 2)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 1, 2)"></button></td>
+							</tr>
+						</table>
+					</td>
+					<td class="outerSquare b r">
+						<table class="innerBoard">
+							<tr>
+								<td class="innerSquare t l"><button class="playButton" onclick="playAt(this, 0, 0, 2, 2)"></button></td>
+								<td class="innerSquare t"><button class="playButton" onclick="playAt(this, 1, 0, 2, 2)"></button></td>
+								<td class="innerSquare t r"><button class="playButton" onclick="playAt(this, 2, 0, 2, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare l"><button class="playButton" onclick="playAt(this, 0, 1, 2, 2)"></button></td>
+								<td class="innerSquare"><button class="playButton" onclick="playAt(this, 1, 1, 2, 2)"></button></td>
+								<td class="innerSquare r"><button class="playButton" onclick="playAt(this, 2, 1, 2, 2)"></button></td>
+							</tr>
+							<tr>
+								<td class="innerSquare b l"><button class="playButton" onclick="playAt(this, 0, 2, 2, 2)"></button></td>
+								<td class="innerSquare b"><button class="playButton" onclick="playAt(this, 1, 2, 2, 2)"></button></td>
+								<td class="innerSquare b r"><button class="playButton" onclick="playAt(this, 2, 2, 2, 2)"></button></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<div id="playButtonHolder">
+				
+			</div>
+		</div>
+	</body>
+</html>
