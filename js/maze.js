@@ -22,7 +22,7 @@ function init() {
 	
 	stampObject(document.getElementById("content"));
 
-	openCells = [[[Math.round(width/2), 9],[Math.round(width/2), 9]]];
+	openCells = [[[1, 1],[1, 1]]];
 	finish = false;
 	ctx.fillStyle = "#e4e4e4";
 	ctx.strokeStyle = "#e4e4e4";
@@ -47,7 +47,7 @@ function stampObject(object) {
 function loop() {
 	step();
 	if(!finish)
-		setTimeout(loop, 1);
+		setTimeout(loop, 20);
 }
 
 function step() {

@@ -95,10 +95,6 @@ body {
 	padding-bottom: 20px;
 	line-height: 1rem;
 	transition-duration: 0.1s;
-	outline-style: solid;
-	outline-color: var(--primary-focus);
-	outline-width: 0px;
-	outline-offset: 0px;
 }
 
 .header a.active {
@@ -108,8 +104,6 @@ body {
 
 .header a.nav-item:hover {
 	color: var(--primary-focus);
-	outline-width: 3px;
-	outline-offset: -3px;
 }
 
 .header .hover-animate {
@@ -246,12 +240,20 @@ body {
 .content a {
 	text-decoration: none;
 	color: var(--primary);
+	fill: var(--primary);
 	transition-duration: 0.1s;
 }
 
 .content a:hover {
 	color: var(--primary-focus);
 	background-color: var(--secondary-focus);
+	fill: var(--primary-focus);
+}
+
+.content td {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
 }
 
 .content .button {
@@ -262,7 +264,7 @@ body {
 	color: var(--primary);
 	font-family: primary;
 	padding: 16px;
-	outline-color: black;
+	outline-color: var(--primary);
 	border-style: none;
 	border-radius: 0px;
 	outline-width: 2px;
@@ -378,6 +380,8 @@ body {
 }
 .footer svg {
 	height: 1.25em;
+	position: relative;
+	top: 0.25em;
 }
 
 /* Misc */
@@ -395,10 +399,13 @@ body {
   	animation-iteration-count: 1, infinite;
 }
 
-svg.icon {
+.icon {
 	display: inline;
 	height: 1.5em;
 	float: left;
+	margin: 0.35em;
+	position: relative;
+	bottom: 0.25em;
 }
 
 @keyframes type-cursor {
