@@ -140,6 +140,7 @@ body {
 	bottom: 0px;
 	margin: 8px;
 	margin-bottom: 30px;
+	z-index: 30;
 }
 
 .sidebar ul {
