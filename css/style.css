@@ -200,6 +200,12 @@ body {
 	left: 10px;
 }
 
+h1 {
+	font-size: 32pt;
+	font-family: primary;
+	font-weight: bold;
+	color: var(--primary);
+}
 
 /* Content */
 
@@ -214,7 +220,7 @@ body {
 	scroll-snap-type: y mandatory;
 }
 
-.content h1 {
+.content .h1 {
 	font-size: 32pt;
 	font-family: primary;
 	font-weight: bold;
@@ -424,6 +430,6 @@ body {
 
 @keyframes type {
 	0% {max-width: 0px;}
-	66% {max-width: 0px; animation-timing-function: steps(12, end);}
-	100% {max-width: 576px; }
+	66% {max-width: 0px; animation-timing-function: steps(44, end);}
+	100% {max-width: 1100px; }
 }
