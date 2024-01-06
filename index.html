@@ -1,12 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Jonas's Website</title>
-    </head>
-    <body>
-        <h1 class="type" style="padding-left: 32px">Work In Progress: Come back in a few days :)</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jonas P. Knochelmann's Home Page</title>
+</head>
+<body>
+    <table class="content">
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/HeadshotCropped.jpg">
+            </td>
+            <td colspan="3">
+                <h1>Jonas P. Knochelmann</h1>
+                <p>
+                    I’m Jonas, a computer science undergraduate student at the University of Utah, 
+                    and (hopefully) soon-to-be computer science PhD student. I’ve been working as 
+                    an undergraduate researcher for nearly two years with Professor Rogelio E. 
+                    Cardona-Rivera and his Quantitative Experience Design Laboratory.
+                    <br><br>
+                    My research has been extremely varied, but I am broadly interested in programming 
+                    languages, computer graphics, artificial intelligence, and games research. I’m 
+                    currently awaiting responses on PhD applications, but I am always in search of 
+                    new research or work opportunities. 
+                </p>
+            </td>
+            <td style="width: 200px;">
+                <img width="200px" src="img/Knuth.jpg">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h1>Projects</h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/Bronco.gif">
+            </td>
+            <td colspan="4">
+                <h2>Bronco Text Generator</h2>
+                <p>
+                    Bronco is a domain-specific programming language for procedural text generation. 
+                    It allows users to author grammar-based text generators using a feature-rich, 
+                    Turing-complete language. It is written as an extensible C# library and a standalone 
+                    IDE, both open source on <a href="https://github.com/qed-lab/Bronco-Text-Generator">GitHub</a>. 
+                    <br><br>
+                    The language was made over a summer, funded through 
+                    <a href="https://our.utah.edu/research-scholarship-opportunities/urop/">UROP</a> 
+                    and <a href="https://our.utah.edu/research-scholarship-opportunities/spur/">SPUR</a>, 
+                    under Professor Rogelio E. Cardona-Rivera and his Quantitative Experience Design 
+                    Laboratory. It was the subject of a publication: <a href="files/knochelmann2022bronco.pdf">
+                    Bronco: A Universal Authoring Language for Controllable Text Generation</a> at ICIDs 2022.                     
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/GTPCGCover.png">
+            </td>
+            <td colspan="4">
+                <h2 id="gtpcg">Group Theory for Procedural Content Generation (GTPCG)</h2>
+                <p>
+                    GTPCG is an ongoing research project exploring the potential connection between 
+                    group theory and procedural content generation. More specifically, we propose 
+                    that PCG artifacts can be described with groups and that such descriptions can 
+                    be used for new methods of generation and analysis.
+                    <br><br>
+                    Thus far, I and Professor Rogelio E. Cardona-Rivera have been researching 
+                    generation, my exhaustive execution of group actions. This work has resulted in 
+                    a <a href="files/GTPCG Poster.pdf">poster presentation</a>, and a <a href="files/GTPCG.pdf">research paper submission</a> (and rejection). We are currently 
+                    in the process of another paper submission, and releasing an extension for Blender, 
+                    allowing for group theoretic generation of 3D geometry. 
+                   
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/BIT4D.gif">
+            </td>
+            <td colspan="4">
+                <h2>BIT4D</h2>
+                <p>
+                    BIT4D (Back In The 4th Dimension), is a little 4-dimensional rendering engine 
+                    built in Godot. Using the slicing method, it renders 4D geometry by calculating 
+                    its 3-dimensional intersection with the view plane. Still in progress, it currently 
+                    supports lighting and texturing, and will eventually include collision and simple 
+                    physics. The current version is <a href="https://github.com/JonasPKnoch/BIT4D">available on GitHub</a>.  
+                    <br><br>
+                    The rendering is done efficiently on the GPU. The 4D models are loaded from a 
+                    custom file format that can be converted from 4D OFF.                      
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/rot.gif">
+            </td>
+            <td colspan="4">
+                <h2>4D Axonometric Projection</h2>
+                <p>
+                    4D axonometric projection is a method of mapping 4 dimensions down to 2 
+                    orthographically; without perspective. I’ve made a collection of tools for 
+                    rendering 4D geometry with this method. It uses a custom file format and can 
+                    render in multiple formats. The project is made in Processing and is 
+                    <a href="https://github.com/JonasPKnoch/4DAxonometric">available on GitHub</a>. 
+                    A more detailed writeup of the method can also be found on the repository.                  
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/ColderOnMars.gif">
+            </td>
+            <td colspan="4">
+                <h2>Colder On Mars</h2>
+                <p>
+                    Colder On Mars is a silly little web applet I made to teach myself web programming. 
+                    Using numerous APIs strung together, it compares the weather at the user’s current 
+                    location, with the current weather on Mars as provided by the InSight Rover (May 
+                    she rest in piece). It is <a href="https://colder-on-mars.s3-us-west-1.amazonaws.com/">
+                    hosted on AWS’s S3</a> and still works due to fallback data. Code 
+                    <a href="https://github.com/JonasPKnoch/Colder-On-Mars">available on GitHub</a>.                 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h1>Publications</h1>
+                <ol>
+                    <li>
+                    Jonas P. Knochelmann and Rogelio E. Cardona-Rivera. Bronco: A Universal Authoring 
+                    Language for Controllable Text Generation. In the Proceedings of the 15th 
+                    International Conference on Interactive Digital Storytelling (ICIDS 2022). 
+                    <a href="https://jonaspknoch.github.io/files/knochelmann2022bronco.pdf">
+                        https://jonaspknoch.github.io/files/knochelmann2022bronco.pdf</a>.
+                    </li>
+                    <br>
+                    <li>
+                    Jonas P. Knochelmann and Rogelio E. Cardona-Rivera. Group Theory for Procedural 
+                    Content Generation: Towards Generating Objects from Mathematical Description. 
+                    Unpublished. <a href="https://jonaspknoch.github.io/files/GTPCG.pdf">
+                        https://jonaspknoch.github.io/files/GTPCG.pdf</a>.
+                    </li>
+                    <br>
+                    <li>
+                    Jonas P. Knochelmann and Rogelio E. Cardona-Rivera. Exploring group theory for 
+                    use in procedural content generation. University of Utah Poster Session. 
+                    <a href="https://jonaspknoch.github.io/files/GTPCG%20Poster.pdf">
+                    https://jonaspknoch.github.io/files/GTPCG%20Poster.pdf</a>.
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h1>Contact Info</h1>
+                <p>
+                    Email: jonas dot p dot knochelmann at gmail dot com <br><br>
+                    GitHub: <a href="https://github.com/JonasPKnoch">github.com/JonasPKnoch</a><br><br>
+                    Resume: <a href="files/resume.pdf">Click here</a><br><br>
+                    Phone: 801 652 0627 (My phone does not work so please don't call me)<br><br>
+
+                    My last name is pronounced GNAW-CULL-MIN in case you need that.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>
