@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Blender Stuff</title>
+</head>
+<body>
+    <table class="content">
+        <tr>
+            <td colspan="5">
+                <h1>Blender Stuff</h1>
+                <p>
+                    I've been using Blender causally for years and it's become my go-to tool whenever
+                    I am doing visual designs. I've made fair use of Blender's procedural tools, and
+                    dabbled in scripting.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h1>Projects</h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/LineMaker.gif">
+                <img width="200px" src="img/LineMakerCode.png">
+            </td>
+            <td colspan="3">
+                <h2>Shape-key code generator</h2>
+                <p>
+                    Using Blender's Python API, I made a code-generation script that allows me to
+                    draw Blender objects in another program. The script takes a curve object and 
+                    all of it's shape keys, and generates a set of Java functions to draw it's curves
+                    in the Processing environment. Along with a small template, the generated functions
+                    let users draw shapes at any position or scale, and to specify shape-key values.
+                    <br><br>
+                    Although the script is limited and was never intended for public release, it does
+                    let users easily use shapes made in Blender for creative coding projects in Processing.
+                    The .blend file, template, and script are all 
+                    <a href="https://github.com/JonasPKnoch/LineMaker">available on Github</a>.
+                </p>
+            </td>
+            <td style="width: 200px;">
+                <img width="200px" src="img/LineMakerBlend.png">
+                <img width="200px" src="img/LineMakerProcessing.PNG">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/GTPCGDemo.gif">
+                <img width="200px" src="img/Castle.png">
+            </td>
+            <td colspan="3">
+                <h2 id="gtpcg">Simple Group Modifier (GTPCG)</h2>
+                <p>
+                As part of the GTPCG research effort, I used Blender's Geometry Nodes to make the 
+                "Simple Group" modifier. It acts similarly to Blender's built-in Array modifier, 
+                except that it allows for iterated translations, rotations, and scalings. There's
+                a demonstration .blend file <a href="blendFiles/GTPCGGeoNodes.blend">available here</a>.
+                <br><br>
+                This modifier has proven surprisingly helpful, as it allows for very fast generation
+                of complex, symmetric geometry. You can see a few examples of it here.
+                <br><br>
+                In terms of group theory, the name "Simple Group" is perhaps misleading, as
+                the modifier doesn't actually utilize "simple groups" in the group theoretic sense.
+                Rather, the modifier is the simplest way to use groups for procedural geometry.
+                The output of this modifier is an object composed of many copies of the original
+                object, that is symmetric under a cyclic group of specified order. This group's
+                action is to apply the specified transformation to each of the sub-objects, or return
+                to identity. Adding multiple of these modifiers corresponds to group multiplication.
+                </p>
+                <td style="width: 200px;">
+                    <img width="200px" src="img/Tent.gif">
+                    <img width="200px" src="img/SkullArray.png">
+                </td>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/BIT4D.gif">
+                <img width="200px" src="img/SunStarerShader.gif">
+            </td>
+            <td colspan="3">
+                <h2>Sun Starer</h2>
+                <p>
+                    A procedurally animated character I made for an EDM performance. Each individual part
+                    of this creature is simple, but I think the combined effect is rather mesmerizing. 
+                    You can find the here's the <a href="blendFiles/SunStarer.blend">.blend file</a>
+                    and here's a link to the <a href="https://drive.google.com/file/d/1jvUqsUS2nXtVybGlgdqUDkV0GStSxh2V/view?usp=sharing">fully rendered video</a>.
+                    <br><br>
+                    The project makes extensive use of Blender's node-based shader editor to achieve
+                    the cell-shading, morphing colors, and fiery sun in the background. The animations 
+                    are mostly driven by Blender's Driver system, as well as shape-keys, constraints,
+                    geometry nodes and curve modifiers. The project also uses the line-art system, 
+                    the compositor, and some good old fashioned modeling. 
+                </p>
+            </td>
+            <td style="width: 200px;">
+                <img width="200px" src="img/SunStarerKeys.gif">
+                <img width="200px" src="img/SunStarerViewport.gif">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">
+                <img width="200px" src="img/GTPCGPoster.png">
+                <img width="200px" src="img/PosterTri.png">
+            </td>
+            <td colspan="3">
+                <h2>GTPCG Poster</h2>
+                <p>
+                    I made most of the visuals for the 
+                    <a href="../files/GTPCG Poster.pdf">GTPCG poster</a> in Blender! 
+                    There's nothing too special going on here, except a demonstration of how I use 
+                    Blender for everything. You can find the 
+                    <a href="blendFiles/GTPCGPosterDiagrams.blend">.blend file here</a>. 
+                </p>
+            </td>
+            <td style="width: 200px;">
+                <img width="200px" src="img/PosterTeapots.png">
+                <img width="200px" src="img/PosterMultiplication.png">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
